@@ -1,5 +1,6 @@
 import { renderReact } from 'hypernova-react';
-import Login from './Login';
+import Home from './Home';
+import reactDOM from 'react';
 
 
-renderReact('Login', Login);
+reactDOM.hydrate('Home', Home);

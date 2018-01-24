@@ -73,15 +73,15 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.Login = undefined;
+exports.Home = undefined;
 
-var _Login = __webpack_require__(1);
+var _Home = __webpack_require__(1);
 
-var _Login2 = _interopRequireDefault(_Login);
+var _Home2 = _interopRequireDefault(_Home);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports.Login = _Login2.default;
+exports.Home = _Home2.default;
 
 /***/ }),
 /* 1 */
@@ -90,18 +90,45 @@ exports.Login = _Login2.default;
 "use strict";
 
 
-var React = __webpack_require__(2);
-var renderReact = __webpack_require__(3).renderReact;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-function Login(props) {
+var _templateObject = _taggedTemplateLiteral(['\n  color: palevioletred;\n  font-size: 1em;\n  margin: 1em;\n  padding: 0.25em 1em;\n  border: 2px solid palevioletred;\n  border-radius: 3px;\n'], ['\n  color: palevioletred;\n  font-size: 1em;\n  margin: 1em;\n  padding: 0.25em 1em;\n  border: 2px solid palevioletred;\n  border-radius: 3px;\n']),
+    _templateObject2 = _taggedTemplateLiteral(['\n  font-size: 3.5em;\n  text-align: center;\n  color: red;\n'], ['\n  font-size: 3.5em;\n  text-align: center;\n  color: red;\n']),
+    _templateObject3 = _taggedTemplateLiteral(['\n  padding: 4em;\n  background: papayawhip;\n  background-color: red;\n'], ['\n  padding: 4em;\n  background: papayawhip;\n  background-color: red;\n']),
+    _templateObject4 = _taggedTemplateLiteral(['\n  display: block;\n\n'], ['\n  display: block;\n\n']);
+
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var React = __webpack_require__(2);
+var styled = __webpack_require__(3);
+var Button = styled.default.button(_templateObject);
+var Title = styled.default.h1(_templateObject2);
+var Wrapper = styled.default.section(_templateObject3);
+var Input = styled.default.input(_templateObject4);
+
+exports.default = function () {
   return React.createElement(
     'div',
     null,
-    'Blah'
+    React.createElement(
+      Wrapper,
+      null,
+      React.createElement(
+        Title,
+        null,
+        'Whats Your Poison?'
+      ),
+      React.createElement(
+        Button,
+        null,
+        'Login'
+      ),
+      React.createElement('input', null)
+    )
   );
-}
-
-module.exports = renderReact('Login.jsx', Login);
+};
 
 /***/ }),
 /* 2 */
@@ -113,7 +140,7 @@ module.exports = require("react");
 /* 3 */
 /***/ (function(module, exports) {
 
-module.exports = require("hypernova-react");
+module.exports = require("styled-components");
 
 /***/ })
 /******/ ])));

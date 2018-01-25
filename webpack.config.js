@@ -9,6 +9,10 @@ module.exports = {
       filename: './build/bundle.js',
       path: path.resolve(__dirname, 'dist')
     },
+    node: {
+   fs: "empty",
+   net:"empty"
+},
     // Emit source maps so we can debug our code in the browser
     devtool: 'source-map',
     module: {

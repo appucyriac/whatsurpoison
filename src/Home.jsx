@@ -22,12 +22,21 @@ const Input = styled.default.input`
   display: block;
 
 `
+const express = require('express');
+const app = express();
+function handleClick(){
+	app.post('/', function(req, res) {
+		res.redirect('/login');
+		console.log(res);
+});
+	
+}
 export default ()=>(
          <div>
   	        <Wrapper>
   	          <Title>Whats Your Poison?</Title>
-  	          <Button>Login</Button>
-  	          <Input></Input>
+  	          <Button onclick={handleClick}>Login</Button>
+  	          <Button>Browse</Button>
   	        </Wrapper>
   	      </div>)
 

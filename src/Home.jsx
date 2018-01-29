@@ -1,4 +1,5 @@
-const React = require('react');
+import React, { Component } from "react";
+import { renderReact } from 'hypernova-react';
 const styled = require('styled-components');
 const Button = styled.default.button`
   color: palevioletred;
@@ -24,19 +25,30 @@ const Input = styled.default.input`
 `
 const express = require('express');
 const app = express();
-function handleClick(){
+
+
+
+
+export default class Home extends React.Component {   
+  
+handleClick(){
 	app.post('/', function(req, res) {
 		res.redirect('/login');
 		console.log(res);
 });
 	
 }
-export default ()=>(
+
+  
+  render() {
+    return (
          <div>
   	        <Wrapper>
   	          <Title>Whats Your Poison?</Title>
-  	          <Button onclick={handleClick}>Login</Button>
+  	          <Button onClick={this.handleClick.bind(this)}>Login</Button>
   	          <Button>Browse</Button>
   	        </Wrapper>
-  	      </div>)
-
+  	      </div>
+    );
+  }
+}

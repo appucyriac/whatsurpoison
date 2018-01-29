@@ -1,0 +1,4 @@
+{
+  "dbUri": "mongodb://admin:Missyoubro1*@ds211588.mlab.com:11588/whatsurpoison-db",
+  "jwtSecret": "blah"
+}

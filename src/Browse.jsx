@@ -22,16 +22,16 @@ const img = styled.default.img`
   display: block;
 
 `
-const itemBox=styled.default.div`
+const ItemBox=styled.default.div`
   border: 2px solid red;
 `
 export default ()=>(
          <div>
   	        <Wrapper>
   	          <Title>Choose Your poison</Title>
-              <itemBox>
+              <ItemBox>
   	            <img src="http://chavysliquor.com/wp-content/uploads/2017/03/grey_goose_vodka_750ml-270x360.jpg"/>
-              </itemBox>
+              </ItemBox>
   	        </Wrapper>
   	      </div>)
 

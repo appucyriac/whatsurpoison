@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { renderReact } from 'hypernova-react';
+import { hydrate } from "react-dom"
 const styled = require('styled-components');
 const Button = styled.default.button`
   color: palevioletred;

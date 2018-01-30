@@ -1,4 +1,4 @@
-module.exports = Markup => `
+module.exports = (Markup) => `
     <!DOCTYPE html>
     <html>
     <head>
@@ -6,6 +6,8 @@ module.exports = Markup => `
         <meta charset="utf-8">
     </head>
     <body>
+        
+        <div id="root" />
         ${Markup}
         <script type="text/javascript" src="bundle.js"></script>
     </body>

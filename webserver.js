@@ -1,23 +1,23 @@
-const reactDOM = require('react');
+const hydrate = require("react-dom");
+const ServerStyleSheet= require('styled-components');
+const React = require('react');
 const path = require('path');
 const axios = require('axios');
 const express = require('express');
 const template = require('./ssr/index.template');
 const app = express();
-const bodyParser = require('body-parser');
-const passport = require('passport');
-const config = require('./config');
-require('./src/models').connect(config.dbUri);
 
-const app = express();
-// tell the app to parse HTTP body messages
-app.use(bodyParser.urlencoded({ extended: false }));
+//const bodyParser = require('body-parser');
+//const passport = require('passport');
+//const config = require('./src/config');
+//require('./src/models').connect(config.dbUri);
+//app.use(bodyParser.urlencoded({ extended: false }));
 // pass the passport middleware
-app.use(passport.initialize());
+//app.use(passport.initialize());
 
 // load passport strategies
-const localLoginStrategy = require('./src/passport/local-login');
-passport.use('local-login', localLoginStrategy);
+//const localLoginStrategy = require('./src/passport/local-login');
+//passport.use('local-login', localLoginStrategy);
 
 app.use('/bundle.js', express.static(path.join(__dirname, 'build', 'bundle.js')));
 
@@ -28,9 +28,12 @@ app.get('/', function (req, res) {
             "data": {}
         }
     }).then(response => {
+     
+
         let homeComponent = response.data.results.homeComponent.html;
-        const renderedMarkup = template(homeComponent);       
-        res.send(renderedMarkup);
+  const renderedMarkup = template(homeComponent); 
+  res.send(renderedMarkup);
+
 
     });
 });
@@ -43,7 +46,7 @@ app.get('/', function (req, res) {
     }).then(response => {
         let loginComponent = response.data.results.loginComponent.html;
         const renderedMarkup = template(loginComponent);       
-        reactDOM.hydrate('renderedMarkup', renderedMarkup);
+        res.send(renderedMarkup);
     });
 });
     app.get('/browse', function (req, res) {

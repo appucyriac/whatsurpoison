@@ -4,7 +4,7 @@ import Auth from '../Auth';
 import LoginForm from '../components/LoginForm.jsx';
 
 
-class LoginPage extends React.Component {
+export default class LoginPage extends React.Component {
 
   /**
    * Class constructor.
@@ -117,5 +117,3 @@ class LoginPage extends React.Component {
 
 }
 
-
-export default LoginPage;

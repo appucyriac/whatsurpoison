@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { renderReact } from 'hypernova-react';
 import { hydrate } from "react-dom"
-const styled = require('styled-components');
-const Button = styled.default.button`
+import styled from "styled-components";
+const Button = styled.button`
   color: palevioletred;
   font-size: 1em;
   margin: 1em;
@@ -10,17 +10,18 @@ const Button = styled.default.button`
   border: 2px solid palevioletred;
   border-radius: 3px;
 `;
-const Title = styled.default.h1`
+const Title = styled.h1`
   font-size: 3.5em;
   text-align: center;
   color: red;
 `;
-const Wrapper = styled.default.section`
+const Wrapper = styled.section`
   padding: 4em;
   background: papayawhip;
   background-color: red;
+  margin-left: 200px;
 `;
-const Input = styled.default.input`
+const Input = styled.input`
   display: block;
 
 `
@@ -45,9 +46,9 @@ handleClick(){
     return (
          <div>
   	        <Wrapper>
-  	          <Title>Whats Your Poison?</Title>
-  	          <Button onClick={this.handleClick.bind(this)}>Login</Button>
-  	          <Button>Browse</Button>
+	  	          <Title>Whats Your Poison?</Title>
+	  	          <Button onClick={this.handleClick.bind(this)}>Login</Button>
+	  	          <Button>Browse</Button>
   	        </Wrapper>
   	      </div>
     );

@@ -1,40 +1,26 @@
-const path = require('path');
-const HtmlPlugin = require('html-webpack-plugin')
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+const path = require('path');
 
 module.exports = {
-    entry: './src/index.js',
+    entry: './src/index.jsx',
     output: {
-      filename: './build/bundle.js',
-      path: path.resolve(__dirname, 'dist')
+        path: path.join(__dirname, 'build'),
+        filename: 'bundle.js'
+    },
+    module: {
+        rules: [
+            {
+                include: path.join(__dirname, 'src'),
+                test: /\.jsx?$/,
+                use: 'babel-loader'
+            }
+        ]
     },
     node: {
-   fs: "empty",
-   net:"empty"
+  fs: 'empty',
+  net: 'empty'
 },
-    // Emit source maps so we can debug our code in the browser
-    devtool: 'source-map',
-    module: {
-      rules: [{
-          test: /\.(js|jsx)$/,
-          exclude: /node_modules/,
-          loader: "babel-loader"
-        } ,{
-          test: /\.css$/,
-          loader: ExtractTextPlugin.extract({
-            use: 'css-loader',
-          })}
-
-        ]
-      },
-      resolve: {
+    resolve: {
         extensions: ['.js', '.jsx']
-      },
-      plugins: [
-        new HtmlPlugin({
-          template: 'index.html'
-        }),
-        new ExtractTextPlugin('style.bundle.css'),
-      ]
-    };
+    }
+};
